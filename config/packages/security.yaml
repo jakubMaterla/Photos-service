@@ -15,6 +15,11 @@ security:
             security: false
         main:
             lazy: true
+            custom_authenticator: App\Security\LoginFormAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
 
 
             # activate different ways to authenticate
