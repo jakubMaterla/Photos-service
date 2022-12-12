@@ -24,7 +24,7 @@
             <div class="row">
                 {% for photo in latestPhotosPublic %}
                 <div class="col-sm-12 col-lg-4">
-                    <div class="card-deck">
+                    <div class="card-deck mb-5" >
                         <div class="card d-flex justify-content-between">
                             <div class="imageGallery1">
                                 <a href="/images/hosting/{{ photo.filename }}"><img src="images/hosting/{{ photo.filename }}" class="card-img-top" alt="NY"></a>
@@ -35,7 +35,7 @@
                                 <p>
                                     {% if photo.user == app.user %}
                                     <a href="{{ path('my_photos_remove', {'id': photo.id}) }}" class="badge bg-danger text-decoration-none">Usuń</a>
-                                    <a href="{{ path('my_photos_set_as_private', {'id': photo.id}) }}" class="badge bg-primary text-decoration-none">Ustaw prywatne</a>
+                                    <a href="{{ path('my_photos_set_visibility', {'id': photo.id, 'visibility': '0'}) }}" class="badge bg-primary text-decoration-none">Ustaw prywatne</a>
                                     {% endif %}
                                 </p>
                             </div>
@@ -45,6 +45,5 @@
                 {% endfor %}
             </div>
         </div>
-
     </div>
 {% endblock %}
